@@ -2,7 +2,7 @@ import masks
 
 
 def mask_account_card(string: str) -> str:
-    """Функция для маскировки счетев и карт """
+    """Функция для маскировки счетев и карт"""
     if "Счет" in string:
         account = string[-20:]
         return string[:20] + masks.get_mask_account(account)
@@ -12,6 +12,7 @@ def mask_account_card(string: str) -> str:
 
 
 # print(mask_account_card('Maestro:1596837868705122422'))
+
 
 def get_data(info_data: str) -> str:
     """Фунция преоброзования даты и времени"""
