@@ -2,7 +2,7 @@ import masks
 
 
 def mask_account_card(string: str) -> str:
-    """Функция для маскировки счетев и карт"""
+    """Функция для маскировки счетев и карт """
     if "Счет" in string:
         account = string[-20:]
         return string[:20] + masks.get_mask_account(account)
