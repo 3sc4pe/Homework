@@ -6,7 +6,7 @@ def get_mask_card_number(number: str) -> str:
 
 
 def get_mask_account(number: str) -> str:
-    """Функция, которая возвращает маскированный номер счета"""
+    """Функция, которая  возвращает маскированный номер счета"""
     new_num = str(number)
     if len(new_num) == 20:
         return f"**{new_num[-4:]}"
