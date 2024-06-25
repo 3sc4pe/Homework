@@ -36,8 +36,8 @@ def formatting_the_list(a_list_of_lines: list[str]) -> list:
 
 
 def multiply_the_numbers(list_of_numbers: list[int]) -> int:
-    """ Функция принимает на вход список целых чисел
-    и возвращает максимальное произведение двух чисел из списка. """
+    """Функция принимает на вход список целых чисел
+    и возвращает максимальное произведение двух чисел из списка."""
     new_list = list()
     for num in list_of_numbers:
         num_str = str(num).replace("-", "")
@@ -47,4 +47,3 @@ def multiply_the_numbers(list_of_numbers: list[int]) -> int:
         return 0
     else:
         return int(sort_list[-1] * sort_list[-2])
-
