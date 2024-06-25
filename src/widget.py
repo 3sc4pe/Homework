@@ -1,24 +1,49 @@
-from src import masks
+from src.masks import get_mask_account, get_mask_card_number
 
 
-def mask_account_card(string: str) -> str:
+def mask_account_card(account_information: str) -> str:
     """Функция для маскировки счетев и карт"""
-    if "Счет" in string:
-        account = string[-20:]
-        return string[:20] + masks.get_mask_account(account)
+    masks_account_information = ""
+    account_number = ""
+    for slice_info in account_information.split():
+        if slice_info.isalpha() is True:
+            masks_account_information += slice_info + " "
+        elif slice_info.isdigit() is True:
+            account_number += slice_info
+    if masks_account_information == "Счет ":
+        masks_account_information += get_mask_account(account_number)
     else:
-        number_card = "".join(string[-16:].split())
-        return string[:-16] + masks.get_mask_card_number(number_card)
-
-
-# print(mask_account_card('Maestro:1596837868705122422'))
+        masks_account_information += get_mask_card_number(account_number)
+    return masks_account_information
 
 
 def get_data(info_data: str) -> str:
     """Фунция преоброзования даты и времени"""
     data_day = info_data.split("T")[0]
-
     return f"{data_day.split('-')[-1]}.{data_day.split('-')[-2]}.{data_day.split('-')[-3]}"
 
 
-# print(get_data('2018-07-11T02:26:18.671407'))
+def formatting_the_list(a_list_of_lines: list[str]) -> list:
+    """
+    Функция принимает на вход список строк
+    и возвращает список строк, в которых первая и последняя буквы совпадают
+    """
+    new_list = []
+    for line in a_list_of_lines:
+        if line == "" or line[0] == line[-1]:
+            new_list.append(line)
+    return new_list
+
+
+def multiply_the_numbers(list_of_numbers: list[int]) -> int:
+    """ Функция принимает на вход список целых чисел
+    и возвращает максимальное произведение двух чисел из списка. """
+    new_list = list()
+    for num in list_of_numbers:
+        num_str = str(num).replace("-", "")
+        new_list.append(int(num_str))
+    sort_list = sorted(new_list)
+    if len(sort_list) < 2:
+        return 0
+    else:
+        return int(sort_list[-1] * sort_list[-2])
