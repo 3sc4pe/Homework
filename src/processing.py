@@ -14,5 +14,3 @@ def sort_by_date(info_dicts: list[dict], sorting_parameter: bool = True) -> list
         return sorted(info_dicts, key=lambda date: date["date"])
     else:
         return sorted(info_dicts, key=lambda date: date["date"], reverse=sorting_parameter)
-
-
