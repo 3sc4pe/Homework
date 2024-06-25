@@ -12,5 +12,3 @@ from src.widget import mask_account_card
 
 def test_mask_account_card(card_acc, mask_card_acc):
     assert mask_account_card(card_acc) == mask_card_acc
-
-
