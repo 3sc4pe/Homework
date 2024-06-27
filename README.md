@@ -10,7 +10,7 @@
 ```
 git@github.com:3sc4pe/pythonproj.git
 ```
-2. Установка зависимостей из:
+2. Установка зависимостей из: 
 ```
 pyproject.toml
 ```
