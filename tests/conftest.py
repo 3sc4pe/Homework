@@ -93,3 +93,4 @@ def transactions():
 @pytest.fixture
 def currency_test():
     return "USD"
+

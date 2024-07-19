@@ -18,14 +18,14 @@ def mask_account_card(account_information: str) -> str:
 
 
 def get_data(info_data: str) -> str:
-    """Фунция преоброзования даты и времени"""
+    """ Фунция преоброзования даты и времени """
     data_day = info_data.split("T")[0]
     return f"{data_day.split('-')[-1]}.{data_day.split('-')[-2]}.{data_day.split('-')[-3]}"
 
 
 def formatting_the_list(a_list_of_lines: list[str]) -> list:
-    """Функция принимает на вход список строк
-    и возвращает список строк, в которых первая и последняя буквы совпадают"""
+    """ Функция принимает на вход список строк
+    и возвращает список строк, в которых первая и последняя буквы совпадают """
     new_list = []
     for line in a_list_of_lines:
         if line == "" or line[0] == line[-1]:
@@ -34,8 +34,8 @@ def formatting_the_list(a_list_of_lines: list[str]) -> list:
 
 
 def multiply_the_numbers(list_of_numbers: list[int]) -> int:
-    """Функция принимает на вход список целых чисел
-    и возвращает максимальное произведение двух чисел из списка."""
+    """ Функция принимает на вход список целых чисел
+    и возвращает максимальное произведение двух чисел из списка """
     new_list = list()
     for num in list_of_numbers:
         num_str = str(num).replace("-", "")
