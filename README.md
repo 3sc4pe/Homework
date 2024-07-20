@@ -8,7 +8,7 @@
 1. клонируйте репозиторий через ssh.
 2. открывайте через pycharm.
 ```
-git@github.com:3sc4pe/pythonproj.git
+git@github.com:3sc4pe/Homework.git
 ```
 2. Установка зависимостей из: 
 ```
